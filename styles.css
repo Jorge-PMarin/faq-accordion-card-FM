@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /*Text*/
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  /*Gradient*/
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  /*Neutral*/
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  /*Dividers*/
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+.card {
+  margin: 15rem 0;
+  background-color: #fff;
+  width: 90%;
+  max-width: 34rem;
+  min-width: 30rem;
+  border-radius: 2.5rem;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.card__left {
+  position: relative;
+  height: 12rem;
+}
+
+.card__img {
+  display: block;
+  max-width: 100%;
+}
+
+.card__img.mobile {
+  width: 70%;
+  margin: 0 auto;
+  background-image: url(./images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+  background-size: 100%;
+  padding-bottom: 4rem;
+  position: absolute;
+  left: 50%;
+  top: -86%;
+  transform: translateX(-50%);
+}
+
+.card__img.desktop {
+  display: none;
+}
+
+.card__right {
+  padding: 0 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.card__heading {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.card__group {
+  position: relative;
+  border-bottom: 0.1rem solid var(--light-grayish-blue);
+}
+
+.card__btn {
+  height: 100%;
+  background-color: transparent;
+  width: 100%;
+  padding: 1.3rem 0;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--very-dark-grayish-blue);
+}
+
+.card__btn:hover {
+  color: var(--soft-red);
+}
+
+.card__icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+
+.card__answer {
+  max-height: 0;
+  color: var(--dark-grayish-blue);
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.card__group.active .card__answer {
+  max-height: 10rem;
+  padding-bottom: 1.5rem;
+}
+
+.card__group.active .card__icon {
+  transform: rotate(180deg);
+}
+
+.card__group.active .card__btn {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
