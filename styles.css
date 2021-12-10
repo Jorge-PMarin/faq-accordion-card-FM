@@ -79,7 +79,7 @@ body {
 .card__heading {
   font-size: 2.8rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
 .card__group {
@@ -91,7 +91,7 @@ body {
   height: 100%;
   background-color: transparent;
   width: 100%;
-  padding: 1.3rem 0;
+  padding: 1.6rem 0;
   border: none;
   text-align: left;
   cursor: pointer;
@@ -104,7 +104,7 @@ body {
 
 .card__icon {
   position: absolute;
-  top: 1.5rem;
+  top: 1.7rem;
   right: 0;
   pointer-events: none;
   transition: transform 0.3s;
@@ -129,4 +129,62 @@ body {
 .card__group.active .card__btn {
   font-weight: 700;
   color: var(--very-dark-desaturated-blue);
+}
+
+.card__box {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .card {
+    display: flex;
+    max-width: 94rem;
+    height: 51rem;
+    margin: 0;
+  }
+
+  .card__img.mobile {
+    display: none;
+  }
+
+  .card__heading {
+    text-align: left;
+    font-size: 3.2rem;
+  }
+
+  .card__questions {
+    max-width: 35rem;
+  }
+
+  .card__right {
+    width: 50%;
+    margin: 6em 0 0 0;
+  }
+
+  .card__left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 192%;
+    background-position: -52rem -27rem;
+  }
+
+  .card__box {
+    display: block;
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    transform: translateY(-25%);
+  }
+
+  .card__img.desktop {
+    display: block;
+    transform: translateX(-18%);
+  }
+
+  .card__wrapper {
+    overflow: hidden;
+  }
 }
